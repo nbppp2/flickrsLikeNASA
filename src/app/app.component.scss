@@ -8,7 +8,6 @@ $image-gallery: (
 );
 
 .image-gallery {
-  // @include grid-collapse($image-gallery);
   @include grid-container;
 }
 
