@@ -1,3 +1,4 @@
-<div id="main">
-  <app-single-image-component></app-single-image-component>
+<div id="main image-gallery">
+  <app-single-image-component *ngFor="let url of urls" [imageURL]="url" class="single-image">
+  </app-single-image-component>
 </div>

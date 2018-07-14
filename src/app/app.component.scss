@@ -2,14 +2,49 @@
 @import '~bourbon/core/_bourbon.scss';
 @import '~bourbon-neat/core/_neat.scss';
 
-#main{
-    @include grid-container;
+$image-gallery: (
+  columns: 4,
+  gutter: 40px,
+);
+
+.image-gallery {
+  // @include grid-collapse($image-gallery);
+  @include grid-container;
 }
 
-.row{
-  @include grid-column(4);
+.single-image {
+  @include grid-column(1, $image-gallery);
+  margin-bottom: 1rem;
+  max-width: 22.5%;
+  height: auto;
+  background-color: aqua;
 }
 
-.single-image{
-  @include grid-column(1 of 4);
+img {
+   max-width:100%;
 }
+
+// #main{
+//     @include grid-container;
+// }
+
+// .wrapper{
+//   @include grid-column(4);
+// }
+
+// .single-image{
+//   @include grid-column(1 of 4);
+// }
+
+// $custom-grid--fourths: (
+//   columns: 3,
+//   gutter: 60px,
+// );
+
+// .custom-grid--fourths {
+//   @include grid-container;
+// }
+
+// .custom-grid--fourths__a-single-column {
+//   @include grid-column(1, $custom-grid--fourths);
+// }
