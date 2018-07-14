@@ -1,26 +1,21 @@
 # FlickrsLikeNASA
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+I pretty much hate infinite scroll. Not because of the concept, but because the implementation never seems to be quite there. I was asked to write a site that reads a NASA Flickr feed, and I figured this was going to be the best time to reinvent the wheel.
 
-## Development server
+My plan is to implement the infinite scroll component using this feed and it's pages as an example. I will eventually pack the infinite scroll as a WebComponent so that you can use it in any modern application.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Tools used
 
-## Code scaffolding
+I decided to use Angular to develop this site, and am using Angular 6. I did this because I feel I need more Angular practice, since I'm currently working on jQuery & AngularJS apps.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+I decided to use Bourbon & Neat for layout, as I've used Bootstrap in the past and felt like this would be an opportunity to learn that as well.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Running
+run `ng serve`. This will build and serve the project on port 4200. Open your browser and go to `http://localhost:4200`
 
 ## Further help
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FlickrService } from './flickr.service';
 
 @Component({
   selector: 'app-root',
@@ -6,18 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  urls: string[];
+  urls: any[]; // FIXME
 
+  constructor(private flickrService: FlickrService) {
+    this.urls = new Array<any>();
+  }
+
+  // TODO: This should be updated to load more pages as you scroll.
+  // TODO: the layout should better handle different image sizes.
+  // TODO: allow filtering of images.
   ngOnInit() {
-    this.urls = [
-      "https://imgs.xkcd.com/comics/soda_sugar_comparisons.png",
-      "https://imgs.xkcd.com/comics/success.png",
-      "https://imgs.xkcd.com/comics/going_west.png",
-      "https://imgs.xkcd.com/comics/bad_map_projection_time_zones.png",
-      "https://imgs.xkcd.com/comics/actors.png",
-      "https://imgs.xkcd.com/comics/unscientific.png",
-      "https://imgs.xkcd.com/comics/literally.png",
-      "https://imgs.xkcd.com/comics/induced_current.png",
-    ]
+    this.flickrService.getFlickrFeed().subscribe((res: any) => {
+      res.photos.photo.forEach(photoData => {
+        let urlDefault = 'https://farm' + photoData.farm + '.staticflickr.com/' + photoData.server + '/' + photoData.id + '_' + photoData.secret + '.jpg';
+        let urlLarge = 'https://farm' + photoData.farm + '.staticflickr.com/' + photoData.server + '/' + photoData.id + '_' + photoData.secret + '_b.jpg';
+        this.urls.push(urlDefault);
+      });
+      console.log(res.constructor.name)
+    })
   }
 }
