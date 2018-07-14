@@ -1,0 +1,15 @@
+// FIXME: these imports are ugly. Figure out how to fix it
+@import '~bourbon/core/_bourbon.scss';
+@import '~bourbon-neat/core/_neat.scss';
+
+#main{
+    @include grid-container;
+}
+
+.row{
+  @include grid-column(4);
+}
+
+.single-image{
+  @include grid-column(1 of 4);
+}

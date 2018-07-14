@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -72,7 +72,9 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "../node_modules/bourbon/core/_bourbon.scss",
+              "../node_modules/bourbon-neat/core/_neat.scss"
             ],
             "scripts": [],
             "assets": [
@@ -123,5 +125,10 @@
       }
     }
   },
-  "defaultProject": "flickrsLikeNASA"
+  "defaultProject": "flickrsLikeNASA",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
